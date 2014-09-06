@@ -1,0 +1,15 @@
+body {
+  font-family: "Segoe UI", Candara, "Bitstream Vera Sans", "DejaVu Sans", "Bitstream Vera Sans", "Trebuchet MS", Verdana, "Verdana Ref", sans-serif;
+  text-align: center;
+  min-width: 30em;
+}
+
+a {
+  color: #222;
+  border-bottom: 1px solid lightblue;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
