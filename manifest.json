@@ -1,12 +1,12 @@
 {
     "manifest_version": 2,
-    "name":    "Test Extension",
+    "name":    "SoundDown",
     "version": "1.0",
     "offline_enabled": false,
 
     "background": {
-        "persistent": true,
-        "scripts": ["background.js"]
+      "persistent": true,
+      "scripts": ["background.js"]
     },
 
     "browser_action": {
@@ -14,9 +14,15 @@
       "default_popup": "popup.html"
     },
 
+    "icons": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon128.png"
+    },
+
     "permissions": [
-        "tabs",
-        "webRequest",
-        "*://*/*"
+      "tabs",
+      "webRequest",
+      "*://*/*"
     ]
 }

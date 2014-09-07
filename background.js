@@ -17,10 +17,21 @@ chrome.webRequest.onBeforeRequest.addListener(function(details) {
   Object.keys(activeTabs).every(function(key) {
     if (activeTabs[key] == details.tabId) {
       /* We are interested in this request */
-      var match = details.url.match('mp3');
+      var match = details.url.match('streams');
       if (match && match.length > 0) {
-        console.log("Check this out:", details.url);
-        link = details.url;
+        var xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function(resp) {
+          var json;
+          if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+            json = JSON.parse(resp.currentTarget.response);
+            link = json.http_mp3_128_url;
+          }
+        };
+
+        xmlhttp.open("GET",details.url,true);
+        xmlhttp.send();
+
         return false;
       }
     } else {
